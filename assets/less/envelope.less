@@ -1,0 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=La+Belle+Aurore);
+
+@envelope-bg-color: @light-gray;
+@envelope-flap-height: 300px;
+
+#envelope {
+  @vertical-margin: 48px;
+  position: fixed;
+  top: @vertical-margin + @envelope-flap-height;
+  background: @envelope-bg-color;
+  width: 80%;
+  max-width: @max-width;
+  height: ~"calc(100% - @{vertical-margin} * 2 - @{envelope-flap-height})";
+  min-height: @envelope-flap-height * 1.2;
+
+  h1 {
+    color: @bg-color;
+    font: 120px 'La Belle Aurore', cursive;
+    line-height: 100px;
+    text-shadow: -0.5px -0.5px 1px fade(@black, 20%);
+  }
+}
+
+#envelope-flap {
+  position: absolute;
+  perspective-origin: top;
+  width: 100%;
+  height: @envelope-flap-height;
+
+  .inner {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: center top;
+    transform: rotateX(0deg);
+    border: @envelope-flap-height transparent solid;
+    border-top-color: darken(@envelope-bg-color, 5%);
+    width: 0px;
+    height: 0px;
+  }
+}

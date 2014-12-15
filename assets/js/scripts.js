@@ -1,22 +1,27 @@
 $(document).ready(function() {
-  place_flaps();
+
+  position_envelope();
   $(window).on('resize', function() {
-    place_flaps();
+    position_envelope();
   });
 });
 
-/**
- * Places each flap in the correct spot on the screen.
- */
-function place_flaps() {
-  var body_width = $('body').width();
-
-  // Place the top flap
-  var flap_width = $('#flap-top').width();
-  $('#flap-top').css({
-    'left' : (body_width - flap_width)/2 + 'px',
-    'perspective' : flap_width + 'px'
+function position_envelope() {
+  var envelope_width = $('#envelope').width();
+  
+  // Set the position of the envelope on the screen
+  $('#envelope').css({
+    'left' : ($('body').width() - envelope_width) / 2 + 'px'
   });
 
-  // TODO: Place the other flaps
+  // Set the perspective of the envelope flap
+  $('#envelope-flap').css({
+    'perspective' : envelope_width + 'px'
+  });
+
+  // Set the width of the envelope flap
+  $('#envelope-flap .inner').css({
+    'border-left-width' : envelope_width / 2,
+    'border-right-width' : envelope_width / 2
+  });
 }
