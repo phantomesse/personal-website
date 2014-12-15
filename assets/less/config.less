@@ -1,0 +1,116 @@
+/*********
+ * FONTS *
+ *********/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300);
+
+/**********
+ * COLORS *
+ **********/
+@white: #FAFAFA;
+@black: #222;
+@light-gray: #EEE;
+@pink: #D33682;
+
+@bg-color: @white;
+@fg-color: @black;
+@main-bg-color: @light-gray;
+
+/**********
+ * SIZING *
+ **********/
+@max-width: 1024px;
+
+@flap-height: 100px;
+@flap-vertical-offset: 100px;
+
+/*******************
+ * DEFAULT STYLING *
+ *******************/
+* {
+  margin: 0px;
+  padding: 0px;
+  font: 100 16px 'Roboto', sans-serif;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  background: @bg-color;
+  color: @fg-color;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font: 300 48px 'Roboto Condensed', sans-serif;
+}
+
+main {
+  z-index: 1000;
+  margin: 0px auto;
+  position: relative;
+  top: @flap-vertical-offset;
+  background: @main-bg-color;
+  width: 80%;
+  max-width: @max-width;
+  height: ~"calc(100% - @{flap-vertical-offset} * 2)";
+}
+
+section {
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+#flap-top {
+  position: fixed;
+  top: @flap-vertical-offset;
+  width: 80%;
+  max-width: @max-width;
+  height: @flap-height;
+  perspective-origin: top;
+  animation: zindex 2s;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: @pink;
+    width: 100%;
+    height: 100%;
+    transform-origin: center top;
+    transform: rotateX(45deg);
+    animation: flip 2s;
+  }
+
+  @keyframes zindex {
+    0% {
+      z-index: 900;
+    }
+
+    50% {
+      z-index: 900;
+    }
+
+    100% {
+      z-index: 1100;
+    }
+  }
+
+  @keyframes flip {
+    0% {
+      transform: rotateX(45deg);
+    }
+
+    50% {
+      transform: rotateX(135deg);
+    }
+
+    100% {
+      transform: rotateX(45deg);
+    }
+  }
+}
