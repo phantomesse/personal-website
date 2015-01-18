@@ -4,20 +4,24 @@ $(document).ready(function() {
   $(window).resize(function() {
     envelope();
   });
+
+  $(window).scroll(function() {
+    open_envelope();
+  });
 });
 
 function envelope() {
   var envelope = $('#envelope');
 
   // Set the width and height of the envelope flap based on the width and height of the envelope
-  var envelope_flap_svg = $('#envelope-flap');
-  var envelope_flap_width = envelope.width();
+  var envelope_flap_svg = $('#envelope-flap svg');
+  var envelope_flap_width = envelope.width() + parseInt(envelope.css('border-width'));
   var envelope_flap_height = envelope.height();
   envelope_flap_svg.attr('width', envelope_flap_width);
   envelope_flap_svg.attr('height', envelope_flap_height);
 
   // Draw the envelope flap
-  var envelope_flap_path = $('#envelope-flap path');
+  var envelope_flap_path = $('#envelope-flap svg path');
   var envelope_corner_border_radius = parseInt(envelope.css('border-radius'));
   var envelope_flap_top_height = 50;
   var envelope_flap_path_array = [
@@ -35,8 +39,14 @@ function envelope() {
     ['Q0', 0],
     [envelope_corner_border_radius, 0]
   ];
-  envelope_flap_path.attr('d', envelope_flap_path_array.reduce(function(path_str, path_part) {
+  var envelope_flap_path_str = envelope_flap_path_array.reduce(function(path_str, path_part) {
     return path_str + ' ' + path_part[0] + ',' + path_part[1];
-  }));
+  });
+  envelope_flap_path.attr('d', envelope_flap_path_str);
   envelope_flap_path.attr('fill', envelope.css('background-color'));
+}
+
+function open_envelope() {
+  var envelope_flap = $('#envelope-flap svg');
+  envelope_flap.css('transform', 'rotateX(' + $(window).scrollTop() + 'deg)')
 }
