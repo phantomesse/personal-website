@@ -2,9 +2,9 @@ var envelope_offset_bottom = 20;
 var title_offset_bottom;
 
 $(document).ready(function() {
-  envelope_setup();
+  setup();
   $(window).resize(function() {
-    envelope_setup();
+    setup();
   });
 
   $(window).scroll(function() {
@@ -15,7 +15,7 @@ $(document).ready(function() {
   })
 });
 
-function envelope_setup() {
+function setup() {
   var envelope = $('#envelope');
   var title = $('#title');
   var title_line_height = parseInt(title.css('height'));
@@ -31,6 +31,17 @@ function envelope_setup() {
   // Place the title
   title_offset_bottom = envelope_height + parseInt(envelope.css('bottom'));
   title.css('bottom', title_offset_bottom + 'px');
+
+  // Change the text of the title based on browser width
+  var body_width = $('body').width();
+  var title_h1 = $('#title h1');
+  if (body_width < 520) {
+    title_h1.html('<b>Lauren Zou</b>');
+    title_h1.css('text-align', 'center');
+  } else {
+    title_h1.html('From: <b>Lauren Zou</b>');
+    title_h1.css('text-align', 'left');
+  }
 
   // Adjust envelope details
   var envelope_details = $('#envelope-details');
