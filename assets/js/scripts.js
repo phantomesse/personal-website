@@ -15,7 +15,7 @@ function envelope() {
 
   // Set the width and height of the envelope flap based on the width and height of the envelope
   var envelope_flap_svg = $('#envelope-flap svg');
-  var envelope_border_width = parseInt(envelope.css('border-width'));
+  var envelope_border_width = parseInt(envelope.css('border-left-width'));
   var envelope_flap_width = envelope.width() + envelope_border_width * 4;
   var envelope_flap_height = envelope.height();
   envelope_flap_svg.attr('width', envelope_flap_width);
