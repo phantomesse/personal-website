@@ -8,22 +8,22 @@
  * COLORS *
  **********/
 @white: #FAFAFA;
-@black: #222;
+@black: #2C3E50;
 @light-gray: #EEE;
 @pink: #D33682;
 
-@bg-color: @white;
 @fg-color: @black;
+@bg-color: @black;
 
-@envelope-bg-color: @light-gray;
+@envelope-bg-color: @white;
 
 /**********
  * SIZING *
  **********/
 @max-width: 1024px;
 
-@envelope-flap-height: 300px;
-@envelope-vertical-margin: 48px;
+@envelope-height: 400px;
+@envelope-offset-bottom: 50px;
 
 /*******************
  * DEFAULT STYLING *
@@ -43,14 +43,4 @@ html, body {
   color: @fg-color;
   width: 100%;
   height: 100%;
-}
-
-main {
-  display: block;
-  margin: 0px auto;
-  position: relative;
-  top: 200%;
-  background: cornflowerblue;
-  width: 80%;
-  max-width: @max-width;
 }
