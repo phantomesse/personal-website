@@ -34,9 +34,14 @@ function envelope_setup() {
 }
 
 function envelope_open() {
+  var scroll_top = $(window).scrollTop();
+  if (scroll_top > 180 || scroll_top < 0) {
+    return;
+  }
+
   var envelope_flap_outside = $('#envelope-flap-outside');
-  envelope_flap_outside.css('transform', 'rotateX(' + $(window).scrollTop() + 'deg)');
+  envelope_flap_outside.css('transform', 'rotateX(' + scroll_top + 'deg)');
 
   var envelope_flap_inside = $('#envelope-flap-inside');
-  envelope_flap_inside.css('transform', 'rotateX(' + (180 + $(window).scrollTop()) + 'deg)');
+  envelope_flap_inside.css('transform', 'rotateX(' + (180 + scroll_top) + 'deg)');
 }
