@@ -19,9 +19,17 @@ function position_envelope() {
     'perspective' : envelope_width + 'px'
   });
 
-  // Set the width of the envelope flap
-  $('#envelope-flap .inner').css({
-    'border-left-width' : envelope_width / 2,
-    'border-right-width' : envelope_width / 2
-  });
+  // Draw the envelope flap
+  var envelope_flap_height = $('#envelope-flap').height();
+  var envelope_rectangular_part_height = 48;
+  $('#envelope-flap svg polygon')
+    .attr('points', '0,0 '
+      + envelope_width + ',0 '
+      + envelope_width + ',' + envelope_rectangular_part_height + ' '
+      + (envelope_width / 2) + ',' + envelope_flap_height + ' '
+      + '0, ' + envelope_rectangular_part_height);
+
+  // Draw the envelope liner
+  $('#envelope-liner polygon')
+    .attr('points', '');
 }

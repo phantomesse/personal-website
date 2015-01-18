@@ -15,13 +15,15 @@
 @bg-color: @white;
 @fg-color: @black;
 
+@envelope-bg-color: @light-gray;
+
 /**********
  * SIZING *
  **********/
 @max-width: 1024px;
 
-@flap-height: 100px;
-@flap-vertical-offset: 100px;
+@envelope-flap-height: 300px;
+@envelope-vertical-margin: 48px;
 
 /*******************
  * DEFAULT STYLING *
@@ -41,4 +43,14 @@ html, body {
   color: @fg-color;
   width: 100%;
   height: 100%;
+}
+
+main {
+  display: block;
+  margin: 0px auto;
+  position: relative;
+  top: 200%;
+  background: cornflowerblue;
+  width: 80%;
+  max-width: @max-width;
 }
