@@ -31,6 +31,10 @@ function envelope_setup() {
     'border-left-width' : envelope_width/2 + 'px',
     'border-right-width' : envelope_width/2 + 'px'
   });
+
+  // Offset top for letter
+  var letter = $('#letter');
+  letter.css('margin-top', $('body').height() - envelope.height()/2);
 }
 
 function envelope_open() {
