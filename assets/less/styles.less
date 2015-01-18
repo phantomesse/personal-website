@@ -1,3 +1,29 @@
 @import 'config';
 @import 'envelope';
 @import 'letter';
+
+#title {
+  @height: 60px;
+  position: fixed;
+  left: 50%;
+  width: ~"calc(100% - @{side-padding})";
+  max-width: @max-width;
+  height: @height;
+
+  h1 {
+    position: absolute;
+    top: -8px;
+    left: -50%;
+    color: fade(@light-gray, 50%);
+    font: 300 @height 'Roboto Condensed', sans-serif;
+    line-height: @height;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+
+    b {
+      color: @light-gray;
+      font: 300 @height 'Roboto Condensed', sans-serif;
+    }
+  }
+}
