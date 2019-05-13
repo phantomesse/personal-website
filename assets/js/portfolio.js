@@ -6,9 +6,10 @@ class Portfolio {
   }
 
   load() {
+    let self = this;
     $.get('portfolio.html', function (response) {
       $('#portfolio .inner').append(response);
-      Portfolio._onLoad();
+      self._onLoad();
     });
   }
 
@@ -29,6 +30,5 @@ class Portfolio {
 class Piece {
   constructor() {
     this.title = title;
-    this.
   }
 }

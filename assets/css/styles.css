@@ -130,6 +130,22 @@ section h2 {
 section p {
   line-height: 1.6; }
 
+#about .inner {
+  align-items: flex-start;
+  display: grid;
+  grid-template-columns: min-content auto; }
+#about .about-photo {
+  grid-row-end: span 2;
+  background: #273244;
+  width: 240px;
+  height: 240px;
+  margin-right: 48px; }
+@media (max-width: 760px) {
+  #about .inner {
+    grid-template-columns: auto; }
+  #about .about-photo {
+    display: none; } }
+
 #portfolio .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 240px));
