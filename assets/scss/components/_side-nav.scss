@@ -1,0 +1,53 @@
+& {
+  align-items: flex-end;
+  bottom: $side-padding;
+  display: flex;
+  flex-direction: column;
+  opacity: $medium-opacity;
+  position: fixed;
+  right: 0;
+  transform: translateX(0);
+  transition: opacity $transition, transform $transition;
+
+  &.hidden {
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+a {
+  color: $light-color;
+  font-size: 1.2em;
+  opacity: $medium-opacity;
+  padding: $grid / 2 $grid;
+  position: relative;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: opacity $transition;
+
+  &::before {
+    background: $accent-color;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform $transition;
+    transform: scaleX(0);
+    transform-origin: right;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}

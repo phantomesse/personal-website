@@ -1,0 +1,114 @@
+& {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{$section-arrow-height});
+  justify-content: center;
+  padding: $side-padding;
+  width: 100%;
+}
+
+h1 {
+  font: normal 20em $header-font-family;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+  transition: font-size $transition;
+  white-space: nowrap;
+
+  b {
+    font-weight: normal;
+    opacity: $medium-opacity;
+  }
+}
+
+nav {
+  display: flex;
+  margin-bottom: $side-padding;
+  padding-left: $grid * 2;
+}
+
+a {
+  color: $light-color;
+  font-size: 2.5em;
+  font-weight: 500;
+  opacity: $medium-opacity;
+  position: relative;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: opacity $transition;
+
+  &::before {
+    background: $accent-color;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: $grid / 2;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform $transition;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: $grid * 4;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 16em;
+  }
+
+  nav {
+    padding-left: $grid;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 13em;
+  }
+
+  a {
+    font-size: 2em;
+
+    &:not(:last-of-type) {
+      margin-right: $grid * 2;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  h1 {
+    font-size: 10em;
+  }
+
+  nav {
+    padding-left: $grid / 2;
+  }
+
+  a {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+   font-size: 6.5em;
+  }
+
+  a {
+    font-size: 1em;
+  }
+}

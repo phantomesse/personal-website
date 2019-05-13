@@ -1,33 +1,62 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Lauren Zou</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen"
+        href="assets/css/styles.css" />
 </head>
 
 <body>
 
   <header>
-    <h1><b>Lauren</b>Zou</h1>
-
+    <h1>Lauren<b>Zou</b></h1>
     <nav>
-      <a href="#">About</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Resume</a>
-      <a href="#">Contact</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section>
-    <h2>About me</h2>
-
-    <p>Hi! I'm Lauren and I'm passionate about building beautiful web things.</p>
-    <p>I'm a Software Engineer at Google in New York working on <a href="https://ads.google.com/" target="_blank">Google Ads</a> and <a href="https://ads.google.com/" target="_blank">Dart Components</a>. I graduated from Columbia University with a major in computer science and a concentration in math.</p>
-    <p>I love eating, folding origami, and customizing my terminal.</p>
+  <section id="about">
+    <div class="inner">
+      <h2>About</h2>
+    </div>
   </section>
 
+  <section id="portfolio">
+    <div class="inner">
+      <h2>Portfolio</h2>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="inner">
+      <h2>Resume</h2>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="inner">
+      <h2>Contact</h2>
+    </div>
+  </section>
+
+  <footer></footer>
+
+  <nav id="side-nav" class="hidden">
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
