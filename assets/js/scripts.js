@@ -1,5 +1,7 @@
 $(document).ready(function () {
   hideSideNav();
+  let portfolio = new Portfolio();
+  portfolio.load();
 });
 
 $(window).scroll(function () {

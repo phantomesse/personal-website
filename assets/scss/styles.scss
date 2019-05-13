@@ -22,6 +22,10 @@ section {
   @import 'components/section';
 }
 
+#portfolio {
+  @import 'views/portfolio';
+}
+
 footer {
   @import 'components/footer';
 }

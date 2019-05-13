@@ -52,7 +52,11 @@
 
 h2 {
   font: normal 4em $header-font-family;
-  margin: 0;
+  margin: 0 0 $grid * 3;
   opacity: $medium-opacity;
   text-transform: uppercase;
+}
+
+p {
+  line-height: 1.6;
 }
