@@ -129,6 +129,11 @@ section h2 {
   text-transform: uppercase; }
 section p {
   line-height: 1.6; }
+section a {
+  color: #cf9e00;
+  text-decoration: none; }
+  section a:hover, section a:active {
+    color: #ffc303; }
 
 #about .inner {
   align-items: flex-start;
@@ -155,6 +160,35 @@ section p {
   background: #1c2532;
   height: 240px;
   width: 240px; }
+
+#resume .wrapper {
+  position: relative;
+  padding-left: 32px; }
+  #resume .wrapper::before {
+    background: #cf9e00;
+    width: 4px;
+    height: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 30px; }
+#resume .project {
+  padding-left: 32px;
+  position: relative;
+  margin-bottom: 48px; }
+  #resume .project p {
+    font-size: .9em; }
+#resume .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #273244;
+  border: #cf9e00 4px solid;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  box-sizing: border-box; }
 
 footer {
   height: 48px; }

@@ -60,3 +60,13 @@ h2 {
 p {
   line-height: 1.6;
 }
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: lighten($accent-color, 10%);
+  }
+}

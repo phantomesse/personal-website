@@ -30,6 +30,10 @@ section {
   @import 'views/portfolio';
 }
 
+#resume {
+  @import 'views/resume';
+}
+
 footer {
   @import 'components/footer';
 }
