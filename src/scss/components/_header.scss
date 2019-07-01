@@ -1,11 +1,27 @@
 & {
   @include section;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-bg {
+  background-image: url('../images/header-bg.jpg');
+  background-size: cover;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(0);
+  transition: transform .05s linear 0s;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 h1 {

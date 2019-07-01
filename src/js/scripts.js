@@ -7,3 +7,10 @@ $('a[href*="#"]').click(function (e) {
     scrollTop: $(id).offset().top
   }, 200, 'linear');
 });
+
+
+// Parallax scrolling for header background.
+$(window).scroll(function () {
+  const scrollTop = $(window).scrollTop();
+  $('.header-bg').css('transform', `translateY(${scrollTop / 2}px)`)
+});

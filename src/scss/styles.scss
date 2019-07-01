@@ -28,10 +28,20 @@ section {
   }
 
   h2 {
+    color: $light-color;
     font: normal $h2-font-size $heading-font-family;
+  }
+
+  p {
+    line-height: 1.5;
+    max-width: $grid * 100;
   }
 }
 
 .side-nav {
   @import 'components/side-nav';
+}
+
+#about {
+  @import 'views/about';
 }
