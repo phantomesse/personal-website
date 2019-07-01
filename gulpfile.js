@@ -30,6 +30,7 @@ const build = 'build/';
 const htmlSrc = src + '*.html';
 const jsSrc = src + 'js/**/*';
 const imagesSrc = src + 'images/**/*';
+const faviconSrc = src + 'favicon.png';
 
 // Process HTML.
 function html() {
@@ -40,6 +41,11 @@ function html() {
     }))
     .pipe(htmlclean())
     .pipe(gulp.dest(build));
+}
+
+// Process favicon.
+function favicon() {
+  return gulp.src(faviconSrc).pipe(gulp.dest(build));
 }
 
 // Process JS.
@@ -81,6 +87,7 @@ function css() {
 // Watch for file changes.
 function watch(done) {
   gulp.watch(htmlSrc, html);
+  gulp.watch(faviconSrc, favicon);
   gulp.watch(src + 'includes/**/*', html);
   gulp.watch(jsSrc, js);
   gulp.watch(imagesSrc, images);
@@ -88,7 +95,7 @@ function watch(done) {
   done();
 }
 
-exports.html = html;
+exports.html = gulp.series(html, favicon);
 exports.js = js;
 exports.images = images;
 exports.css = gulp.series(images, css);
