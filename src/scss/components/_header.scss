@@ -22,6 +22,7 @@ h1 {
 nav {
   display: flex;
   margin-bottom: $grid * 6;
+  padding-left: $grid * 2 / 3;
 
   a {
     box-sizing: border-box;
@@ -61,11 +62,15 @@ nav {
     font-size: 160px;
   }
 
-  nav a {
-    font-size: 24px;
-    
-    &:not(:last-of-type) {
-      margin-right: $grid * 3;
+  nav {
+    padding-left: $grid;
+
+    a {
+      font-size: 24px;
+      
+      &:not(:last-of-type) {
+        margin-right: $grid * 3;
+      }
     }
   }
 }
@@ -75,11 +80,15 @@ nav {
     font-size: 200px;
   }
 
-  nav a {
-    font-size: 32px;
+  nav {
+    padding-left: $grid * 3 / 2;
 
-    &::after {
-      height: $grid / 2;
+    a {
+      font-size: 32px;
+
+      &::after {
+        height: $grid / 2;
+      }
     }
   }
 }
