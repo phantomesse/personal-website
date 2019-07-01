@@ -31,3 +31,7 @@ section {
     font: normal $h2-font-size $heading-font-family;
   }
 }
+
+.side-nav {
+  @import 'components/side-nav';
+}
