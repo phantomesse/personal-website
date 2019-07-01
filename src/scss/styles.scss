@@ -1,0 +1,33 @@
+@import 'const/colors';
+@import 'const/dimensions';
+@import 'const/fonts';
+
+@import 'mixins/section';
+
+html,
+body {
+  background: $darker-color;
+  border: 0;
+  color: $lighter-color;
+  font: $body-font-size $body-font-family;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header {
+  @import 'components/header';
+}
+
+section {
+  @include section;
+
+  &:nth-of-type(2n + 1) {
+    background: $dark-color;
+  }
+
+  h2 {
+    font: normal $h2-font-size $heading-font-family;
+  }
+}
