@@ -9,8 +9,11 @@ $('a[href*="#"]').click(function (e) {
 });
 
 
-// Parallax scrolling for header background.
 $(window).scroll(function () {
+  // Parallax scrolling for header background.
   const scrollTop = $(window).scrollTop();
-  $('.header-bg').css('transform', `translateY(${scrollTop / 2}px)`)
+  $('.header-bg').css('transform', `translateY(${scrollTop / 2}px)`);
+
+  // Only show the nav when scrolled below the header.
+  $('.side-nav').toggleClass('hidden', scrollTop < $(window).height() / 2);
 });

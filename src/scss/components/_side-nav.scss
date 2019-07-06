@@ -5,6 +5,11 @@
   flex-direction: column;
   position: fixed;
   right: 0;
+  transition: transform .2s ease 0s;
+}
+
+&.hidden {
+  transform: translateX(100%);
 }
 
 a {
