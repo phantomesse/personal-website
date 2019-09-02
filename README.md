@@ -11,6 +11,12 @@ python -m SimpleHTTPServer 8000
 ```
 
 ## Build assets
+Make sure that `npm` is installed. And do:
+
+```
+npm install
+```
+
 To build all the assets, just do:
 
 ```

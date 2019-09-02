@@ -1,3 +1,21 @@
 p {
-  max-width: 50%;
+  line-height: 1.8;
+}
+
+main {
+  display: grid;
+  flex-grow: 0;
+  grid-gap: $grid * 6;
+  grid-template-columns: $grid * 43 auto;
+  justify-self: center;
+  margin: auto;
+  padding-bottom: $grid * 18;
+}
+
+.about-image {
+  background-position: center center;
+  background-size: cover;
+  background-image: url('../../images/about.png');
+  border-radius: $grid;
+  height: 100%;
 }

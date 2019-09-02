@@ -2,45 +2,59 @@
 @import 'const/dimensions';
 @import 'const/fonts';
 
-@import 'mixins/section';
-
 html,
 body {
-  background: $darker-color;
+  background: $bg-color;
   border: 0;
-  color: $lighter-color;
-  font: $body-font-size $body-font-family;
+  color: $primary-fg-color;
+  font: $body-font-size $font-family;
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-header {
-  @import 'components/header';
+a {
+  color: $link-fg-color;
+  text-decoration: none;
 }
 
-section {
-  @include section;
+/**********
+ * Layout *
+ **********/
 
-  &:nth-of-type(2n + 1) {
-    background: $dark-color;
+body {
+  display: flex;
+  flex-direction: column;
+
+  &.about {
+    @import 'views/about';
   }
 
-  h2 {
-    color: $light-color;
-    font: normal $h2-font-size $heading-font-family;
-  }
-
-  p {
-    line-height: 2;
+  &.home {
+    @import 'views/home';
   }
 }
 
-.side-nav {
-  @import 'components/side-nav';
+nav {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  font-size: $nav-font-size;
+  flex-shrink: 0;
+  padding: $grid * 6;
+
+  a {
+    display: block;
+    margin-left: $grid * 3;
+  }
 }
 
-#about {
-  @import 'views/about';
+main {
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: $grid * 3;
+  width: 100%;
 }

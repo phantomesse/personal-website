@@ -3,60 +3,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lauren Zou</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>meet lauren zou.</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
-<body>
-  <header>
-    <div class="header-bg"></div>
-    <div class="inner">
-      <h1>LAUREN<b>ZOU</b></h1>
-      <nav>@@include('./includes/nav.html')</nav>
-    </div>
-  </header>
+<body class="home">
+  <nav>@@include('./includes/nav.html')</nav>
 
-  <section id="about">
-    <div class="inner">
-      <h2>ABOUT</h2>
-      <p>
-        Hi! I'm Lauren and I'm a senior software engineer at Google in New
-        York. I graduated from Columbia University with degrees with Computer
-        Science and Mathematics.
-      </p>
-      <p>
-        I've been programming for over a decade, and I love coding, designing,
-        and drawing.
-      </p>
-      <p>
-        Wanna work together?
-        <a href="mailto:lauren@laurenzou.com" target="_blank">Email me.</a>
-      </p>
-    </div>
-  </section>
+  <main>
+    @@include('./includes/logo.html')
 
-  <section id="portfolio">
-    <div class="inner">
-      <h2>PORTFOLIO</h2>
+    <div class="social-media">
+      <span>Find me at</span>
+      <a href="https://github.com/phantomesse" target="_blank">
+        github
+      </a>
+      <a href="https://codepen.io/phantomesse" target="_blank">
+        codepen
+      </a>
+      <a href="https://www.instagram.com/phantomesse" target="_blank">
+        instagram
+      </a>
+      <a href="www.linkedin.com/in/lauren-zou-85915042" target="_blank">
+        linkedin
+      </a>
     </div>
-  </section>
-
-  <section id="resume">
-    <div class="inner">
-      <h2>RESUME</h2>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="inner">
-      <h2>CONTACT</h2>
-    </div>
-  </section>
-  <nav class="side-nav">@@include('./includes/nav.html')</nav>
+  </main>
 
   <script src="js/scripts.js"></script>
 </body>
