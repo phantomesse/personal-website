@@ -1,3 +1,5 @@
+$max-about-me-width: $grid * 43;
+
 p {
   line-height: 1.8;
 }
@@ -6,16 +8,35 @@ main {
   display: grid;
   flex-grow: 0;
   grid-gap: $grid * 6;
-  grid-template-columns: $grid * 43 auto;
+  grid-template-columns: $max-about-me-width auto;
   justify-self: center;
   margin: auto;
   padding-bottom: $grid * 18;
 }
 
+.about-me {
+  max-width: $max-about-me-width;
+}
+
 .about-image {
+  background-image: url('../../images/about.png');
   background-position: center center;
   background-size: cover;
-  background-image: url('../../images/about.png');
   border-radius: $grid;
   height: 100%;
+  max-width: $max-about-me-width;
+  min-height: $grid * 30;
+  width: 100%;
+}
+
+@media (max-width: 680px) {
+  main {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    max-width: $max-about-me-width + $grid * 6;
+  }
+
+  .about-me {
+    grid-row: 2;
+  }
 }
