@@ -1,0 +1,28 @@
+& {
+  animation-name: fill;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  fill: $secondary-bg-color;
+  stroke: $primary-fg-color;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+path {
+  animation-name: line-animation;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  to {
+    fill: $primary-fg-color;
+    stroke: transparent;
+  }
+}

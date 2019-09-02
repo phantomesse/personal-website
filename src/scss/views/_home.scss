@@ -1,0 +1,57 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  @import 'components/logo';
+  max-width: $grid * 80;
+  width: 100%;
+}
+
+.social-media {
+  color: $secondary-fg-color;
+  display: flex;
+  font-size: $home-font-size;
+  padding-bottom: $grid * 3;
+
+  a {
+    margin: 0 $grid;
+  }
+}
+
+.social-icon {
+  $size: $grid * 6;
+  display: none;
+  background-size: contain;
+  height: $size;
+  width: $size;
+
+  &.github {
+    background-image: url('../../images/social-icon-github.svg');
+  }
+
+  &.codepen {
+    background-image: url('../../images/social-icon-codepen.svg');
+  }
+
+  &.instagram {
+    background-image: url('../../images/social-icon-instagram.svg');
+  }
+
+  &.linkedin {
+    background-image: url('../../images/social-icon-linkedin.svg');
+  }
+}
+
+@media (max-width: $grid * 84) {
+  .social-icon {
+    display: block;
+  }
+
+  .social-media span {
+    display: none;
+  }
+}

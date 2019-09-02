@@ -9,9 +9,6 @@ main {
   flex-grow: 0;
   grid-gap: $grid * 6;
   grid-template-columns: $max-about-me-width auto;
-  justify-self: center;
-  margin: auto;
-  padding-bottom: $grid * 18;
 }
 
 .about-me {
@@ -33,7 +30,7 @@ main {
   main {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    max-width: $max-about-me-width + $grid * 6;
+    max-width: $max-about-me-width + $grid * 12;
   }
 
   .about-me {
