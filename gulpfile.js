@@ -3,6 +3,7 @@
 // Gulp dependencies.
 const gulp = require('gulp');
 const newer = require('gulp-newer');
+const del = require('del');
 
 // HTML dependencies.
 const fileinclude = require('gulp-file-include');
@@ -34,11 +35,14 @@ const faviconSrc = src + 'favicon.png';
 
 // Process HTML.
 function html() {
-  return gulp.src(htmlSrc)
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
+  return gulp
+    .src(htmlSrc)
+    .pipe(
+      fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+      })
+    )
     .pipe(htmlclean())
     .pipe(gulp.dest(build));
 }
@@ -50,7 +54,8 @@ function favicon() {
 
 // Process JS.
 function js() {
-  return gulp.src(jsSrc)
+  return gulp
+    .src(jsSrc)
     .pipe(deporder())
     .pipe(concat('scripts.js'))
     .pipe(terser())
@@ -60,7 +65,8 @@ function js() {
 // Process images.
 function images() {
   const out = build + 'images/';
-  return gulp.src(imagesSrc)
+  return gulp
+    .src(imagesSrc)
     .pipe(newer(out))
     .pipe(imagemin({ optimizationLevel: 5 }))
     .pipe(gulp.dest(out));
@@ -68,19 +74,24 @@ function images() {
 
 // Process CSS.
 function css() {
-  return gulp.src(src + 'scss/styles.scss')
-    .pipe(sass({
-      outputStyle: 'nested',
-      imagePath: '/images/',
-      precision: 3,
-      errLogToConsole: true
-    }).on('error', sass.logError))
-    .pipe(postcss([
-      assets({ loadPaths: ['images/'] }),
-      autoprefixer({ browsers: ['last 2 versions', '> 2%'] }),
-      mqpacker,
-      cssnano
-    ]))
+  return gulp
+    .src(src + 'scss/styles.scss')
+    .pipe(
+      sass({
+        outputStyle: 'nested',
+        imagePath: '/images/',
+        precision: 3,
+        errLogToConsole: true
+      }).on('error', sass.logError)
+    )
+    .pipe(
+      postcss([
+        assets({ loadPaths: ['images/'] }),
+        autoprefixer({ browsers: ['last 2 versions', '> 2%'] }),
+        mqpacker,
+        cssnano
+      ])
+    )
     .pipe(gulp.dest(build + 'css/'));
 }
 
@@ -95,13 +106,25 @@ function watch(done) {
   done();
 }
 
+// Clean build folder.
+function clean(done) {
+  del.sync(build + '**');
+  done();
+}
+
 exports.html = gulp.series(html, favicon);
 exports.js = js;
 exports.images = images;
 exports.css = gulp.series(images, css);
 
-exports.build = gulp.parallel(exports.html, exports.js, exports.images, exports.css);
+exports.clean = clean;
+exports.build = gulp.parallel(
+  exports.html,
+  exports.js,
+  exports.images,
+  exports.css
+);
 exports.watch = watch;
 
 // Default functionality when `gulp` is invoked without arguments.
-exports.default = gulp.series(exports.build, exports.watch);
+exports.default = gulp.series(exports.clean, exports.build, exports.watch);
