@@ -32,7 +32,7 @@ a {
     position: absolute;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .2s linear 0s;
+    transition: transform 0.2s linear 0s;
     width: 100%;
   }
 
@@ -47,7 +47,6 @@ a {
     border-radius: $grid / 4;
     color: $accent-color;
     outline: none;
-
   }
 }
 
@@ -90,4 +89,18 @@ main {
   max-width: $max-width;
   padding: $grid * 3 $grid * 6 $grid * 18;
   width: 100%;
+}
+
+/********************
+ * Highlight color. *
+ ********************/
+
+*::selection {
+  background: rgba($secondary-bg-color, .99);
+  color: $accent-color;
+}
+
+*::-moz-selection {
+  background: rgba($secondary-bg-color, .99);
+  color: $accent-color;
 }
