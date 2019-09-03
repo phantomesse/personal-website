@@ -36,8 +36,8 @@ a {
     width: 100%;
   }
 
-  &:hover::after,
-  &:active::after {
+  &:not(.disabled):hover::after,
+  &:not(.disabled):active::after {
     transform: scaleX(1);
     transform-origin: left;
   }
@@ -78,6 +78,10 @@ nav {
   a {
     display: block;
     margin-left: $grid * 3;
+  }
+
+  .disabled {
+    color: $primary-fg-color;
   }
 }
 
