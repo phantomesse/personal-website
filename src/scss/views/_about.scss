@@ -4,6 +4,13 @@ p {
   line-height: 1.8;
 }
 
+nav h1 {
+  font-size: $nav-font-size;
+  margin: 0;
+  margin-right: auto;
+  padding: 0;
+}
+
 main {
   display: grid;
   flex-grow: 0;
@@ -31,6 +38,10 @@ main {
 }
 
 @media (max-width: 680px) {
+  nav h1 span {
+    display: none;
+  }
+
   main {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
