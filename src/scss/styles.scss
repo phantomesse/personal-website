@@ -37,8 +37,7 @@ a {
   }
 
   &:hover::after,
-  &:active::after,
-  &:focus::after {
+  &:active::after {
     transform: scaleX(1);
     transform-origin: left;
   }

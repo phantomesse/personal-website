@@ -19,39 +19,28 @@ main {
 
   a {
     margin: 0 $grid;
+
+    &:hover svg,
+    &:active svg{
+      fill: $accent-color;
+    }
+  }
+
+  svg {
+    $size: $grid * 6;
+    display: none;
+    fill: $link-fg-color;
+    height: $size;
+    width: $size;
+    transition: fill 0.1s linear 0s;
   }
 }
-
-.social-icon {
-  $size: $grid * 6;
-  display: none;
-  background-size: contain;
-  height: $size;
-  width: $size;
-
-  &.github {
-    background-image: url('../../images/social-icon-github.svg');
-  }
-
-  &.codepen {
-    background-image: url('../../images/social-icon-codepen.svg');
-  }
-
-  &.instagram {
-    background-image: url('../../images/social-icon-instagram.svg');
-  }
-
-  &.linkedin {
-    background-image: url('../../images/social-icon-linkedin.svg');
-  }
-}
-
 @media (max-width: $grid * 84) {
   .social-media a::after {
     display: none;
   }
 
-  .social-icon {
+  .social-media svg {
     display: block;
   }
 
