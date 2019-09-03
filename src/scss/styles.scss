@@ -41,6 +41,14 @@ a {
     transform: scaleX(1);
     transform-origin: left;
   }
+
+  &:focus {
+    background: $secondary-bg-color;
+    border-radius: $grid / 4;
+    color: $accent-color;
+    outline: none;
+
+  }
 }
 
 /**********

@@ -21,8 +21,13 @@ main {
     margin: 0 $grid;
 
     &:hover svg,
-    &:active svg{
+    &:active svg,
+    &:focus svg {
       fill: $accent-color;
+    }
+
+    &:focus {
+      background: transparent;
     }
   }
 
