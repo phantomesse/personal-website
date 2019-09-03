@@ -22,3 +22,8 @@ To build all the assets, just do:
 ```
 gulp
 ```
+
+## Deploy to DreamHost
+```
+scp -r build/* laurenzou@laurenzou.com:/home/laurenzou/laurenzou.com
+```
