@@ -16,7 +16,32 @@ body {
 
 a {
   color: $link-fg-color;
+  display: inline-block;
+  position: relative;
   text-decoration: none;
+
+  &::after {
+    $height: $grid / 4;
+    background: $accent-color;
+    border-radius: $height / 2;
+    bottom: $height * -1;
+    content: '';
+    display: block;
+    height: $height;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s linear 0s;
+    width: 100%;
+  }
+
+  &:hover::after,
+  &:active::after,
+  &:focus::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 /**********

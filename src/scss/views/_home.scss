@@ -47,6 +47,10 @@ main {
 }
 
 @media (max-width: $grid * 84) {
+  .social-media a::after {
+    display: none;
+  }
+
   .social-icon {
     display: block;
   }

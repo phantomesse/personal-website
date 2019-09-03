@@ -13,6 +13,10 @@ main {
 
 .about-me {
   max-width: $max-about-me-width;
+
+  a::after {
+    bottom: 0;
+  }
 }
 
 .about-image {
