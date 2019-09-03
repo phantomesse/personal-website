@@ -17,6 +17,10 @@ main {
   font-size: $home-font-size;
   padding-bottom: $grid * 3;
 
+  > span {
+    margin: 0 $grid;
+  }
+
   a {
     margin: 0 $grid;
 
